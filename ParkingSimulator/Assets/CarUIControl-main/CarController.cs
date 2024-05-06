@@ -34,6 +34,8 @@ public class CarController : MonoBehaviour
     [SerializeField]
     private float brakePower = 30f;
 
+    public Transform steeringWheel;
+
     private float inputX, inputY;
 
     private Rigidbody _rb;
@@ -51,6 +53,7 @@ public class CarController : MonoBehaviour
     {
         GetInputs();
         Move();
+        RotateSteeringWheel();
     }
 
     private void GetInputs()
@@ -107,6 +110,15 @@ public class CarController : MonoBehaviour
 
         wheelCollider.GetWorldPose(out _pos, out _rot);
         wheelTransform.transform.rotation = _rot;
+    }
+
+    private void RotateSteeringWheel()
+    {
+        if (steeringWheel != null)
+        {
+            float wheelRotation = -inputX * turnSensitive * maxAngle; // Invertir la rotación del volante
+            steeringWheel.localEulerAngles = new Vector3(0f, 180f, -wheelRotation); // Aplicar la rotación corregida al volante
+        }
     }
 }
 
