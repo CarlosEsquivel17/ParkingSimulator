@@ -19125,11 +19125,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831596052}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1442e4a4a92f52499e79f6c770804bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  avanzar: 0
   motorForce: 1000
   breakForce: 3000
   maxSteerAngle: 30
@@ -19170,6 +19171,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2325153, y: 1.0903494, z: 4.876381}
   m_Center: {x: -0.025921822, y: 0.045174718, z: 0.027992249}
+--- !u!114 &831596056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831596052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Timeout: 10
+  m_XROrigin: {fileID: 1217437898}
 --- !u!1001 &835336758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28166,6 +28181,7 @@ GameObject:
   - component: {fileID: 1217437897}
   - component: {fileID: 1217437896}
   - component: {fileID: 1217437900}
+  - component: {fileID: 1217437901}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -28221,7 +28237,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217437895}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03a5df2202a8b96488c744be3bd0c33e, type: 3}
   m_Name: 
@@ -28272,6 +28288,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bf7eb2f3538089449cea45c4b191151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1217437901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217437895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a8d337e8bc7ac4498e0df29e7b8bd5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  action:
+    m_Name: Action
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f20836ae-bd5f-46ad-9d54-204cf4c80e4e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 831596053}
+        m_TargetAssemblyTypeName: CarController, Assembly-CSharp
+        m_MethodName: GetInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1218096572
 PrefabInstance:
   m_ObjectHideFlags: 0

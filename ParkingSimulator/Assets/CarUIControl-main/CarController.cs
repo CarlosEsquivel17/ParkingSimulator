@@ -131,6 +131,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     private float horizontalInput, verticalInput;
+    public bool avanzar;
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
 
@@ -152,7 +153,7 @@ public class CarController : MonoBehaviour
         UpdateWheels();
     }
 
-    private void GetInput() {
+    public void GetInput() {
         // Steering Input
         horizontalInput = Input.GetAxis("Horizontal");
 
@@ -162,6 +163,8 @@ public class CarController : MonoBehaviour
         // Breaking Input
         isBreaking = Input.GetKey(KeyCode.Space);
     }
+
+    
 
     private void HandleMotor() {
         frontLeftWheelCollider.motorTorque = verticalInput * motorForce;
