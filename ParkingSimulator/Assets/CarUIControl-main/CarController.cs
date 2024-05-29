@@ -133,7 +133,10 @@ public class CarController : MonoBehaviour
     private float horizontalInput, verticalInput;
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
-
+    private bool startOn = false;
+    private bool cercaDelVehiculo = false;
+    public AudioSource startEngine;
+    public GameObject steer;
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
 
@@ -145,11 +148,19 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
+    
     private void FixedUpdate() {
-        GetInput();
-        HandleMotor();
-        HandleSteering();
-        UpdateWheels();
+        
+        StartEngine();
+
+        if (startOn) {
+            GetInput();
+            HandleMotor();
+            HandleSteering();
+            UpdateWheels();
+            RotateSteer(steer);
+        }
+            
     }
 
     private void GetInput() {
@@ -196,5 +207,19 @@ public class CarController : MonoBehaviour
         wheelCollider.GetWorldPose(out pos, out rot);
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
+    }
+
+
+    private void RotateSteer(GameObject steer){
+        float steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle; 
+        steer.transform.localEulerAngles = new Vector3(0, 180, steerAngle);
+    }
+
+     private void StartEngine() {
+        
+        if (!startOn && Input.GetKey(KeyCode.E)) {
+            startOn = true;
+            startEngine.Play();
+        }
     }
 }
