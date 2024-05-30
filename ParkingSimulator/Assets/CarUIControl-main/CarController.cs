@@ -128,6 +128,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
@@ -140,9 +142,11 @@ public class CarController : MonoBehaviour
     public AudioSource startEngine;
     public GameObject steer;
     private PlayerInput playerInput;
+    public TextMeshProUGUI uiText;
     private Vector2 input;
     private Rigidbody rb;
     private float force = 10f;
+    private int contadorColisiones = 0;
     
 
     // Settings
@@ -156,8 +160,6 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
-
-     
     
     private void FixedUpdate() {
         
@@ -169,7 +171,7 @@ public class CarController : MonoBehaviour
             HandleSteering();
             UpdateWheels();
             RotateSteer(steer);
-            
+            UpdateText("Contador de colisiones:");
         }
             
     }
@@ -237,6 +239,21 @@ public class CarController : MonoBehaviour
         if (!startOn && Input.GetKey(KeyCode.E)) {
             startOn = true;
             startEngine.Play();
+        }
+    }
+
+    void OnCollisionEnter(Collision collision) {
+        // Incrementa el contador de colisiones
+        uiText.SetText("Colisiones: " + contadorColisiones);
+        Debug.Log("Colisiones: " + contadorColisiones);
+        contadorColisiones++;
+    }
+
+    public void UpdateText(string newText) {
+        if (uiText != null) {
+            uiText.SetText(newText);
+        } else {
+            Debug.LogError("El componente de texto no está asignado.");
         }
     }
 }
