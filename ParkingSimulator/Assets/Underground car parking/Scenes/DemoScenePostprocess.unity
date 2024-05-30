@@ -16239,6 +16239,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &687510716 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7656892378664994892, guid: fc58fbbdd4d3e724cb862966045cdb55, type: 3}
+  m_PrefabInstance: {fileID: 1357510847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &690235244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18017,6 +18022,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9aba854bcc681964d99b77381031da92, type: 3}
+--- !u!1 &751800161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7656892378664994892, guid: fc58fbbdd4d3e724cb862966045cdb55, type: 3}
+  m_PrefabInstance: {fileID: 1099863160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &753113147
 GameObject:
   m_ObjectHideFlags: 0
@@ -18254,6 +18264,11 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &761125477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7656892378664994892, guid: fc58fbbdd4d3e724cb862966045cdb55, type: 3}
+  m_PrefabInstance: {fileID: 1275123021}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &764881805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30313,6 +30328,11 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &1222040830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7656892378664994892, guid: fc58fbbdd4d3e724cb862966045cdb55, type: 3}
+  m_PrefabInstance: {fileID: 541705263}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1224598885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32227,6 +32247,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67c650b77b2239847bb67b003537421b, type: 3}
+--- !u!1 &1292016239 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7656892378664994892, guid: fc58fbbdd4d3e724cb862966045cdb55, type: 3}
+  m_PrefabInstance: {fileID: 931769878}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1299417571
 GameObject:
   m_ObjectHideFlags: 0
@@ -46121,6 +46146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c9e667def35b9c43966f231afe63470, type: 3}
+--- !u!1 &1874330267 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7656892378664994892, guid: fc58fbbdd4d3e724cb862966045cdb55, type: 3}
+  m_PrefabInstance: {fileID: 1125764635}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1874750859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50523,6 +50553,57 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc58fbbdd4d3e724cb862966045cdb55, type: 3}
+--- !u!1 &2030974029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2030974031}
+  - component: {fileID: 2030974030}
+  m_Layer: 0
+  m_Name: ChooseCajon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2030974030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030974029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccaa59e795a21a4daa3e599f6e78be8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cajonEstacionamiento:
+  - {fileID: 761125477}
+  - {fileID: 1222040830}
+  - {fileID: 1874330267}
+  - {fileID: 1292016239}
+  - {fileID: 687510716}
+  - {fileID: 751800161}
+  cono: {fileID: 4908254231211520169, guid: fdca8753340ce954fbb0d7a4dd9e72fb, type: 3}
+--- !u!4 &2030974031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030974029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2033134414
 PrefabInstance:
   m_ObjectHideFlags: 0
