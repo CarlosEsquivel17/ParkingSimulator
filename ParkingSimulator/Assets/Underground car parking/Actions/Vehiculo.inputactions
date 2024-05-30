@@ -1,0 +1,78 @@
+{
+    "name": "Vehiculo",
+    "maps": [
+        {
+            "name": "Carro",
+            "id": "cf036db3-42c5-42ff-b332-af46eeb6f9a1",
+            "actions": [
+                {
+                    "name": "Avanzar",
+                    "type": "Value",
+                    "id": "401f9ada-f06c-47be-9583-e3912c233079",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "Hold",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "Flecha",
+                    "id": "032fa3ec-a092-426b-9063-617a681569b6",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Avanzar",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "b0a3204a-c976-4e58-b73f-61f13e1b4006",
+                    "path": "<XRSimulatedController>/devicePosition/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Avanzar",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "3550b5a3-9e7f-4d46-93c2-810bf36b7606",
+                    "path": "<XRSimulatedController>/devicePosition/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Avanzar",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "bd64551f-530b-4908-b63e-debcdc0c2ca6",
+                    "path": "<XRSimulatedController>/devicePosition/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Avanzar",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "8a989689-0d63-456b-a084-5518b4ab491f",
+                    "path": "<XRSimulatedController>/devicePosition/x",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Avanzar",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

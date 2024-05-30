@@ -127,6 +127,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CarController : MonoBehaviour
 {
@@ -138,6 +139,12 @@ public class CarController : MonoBehaviour
     private bool cercaDelVehiculo = false;
     public AudioSource startEngine;
     public GameObject steer;
+    private PlayerInput playerInput;
+    private Vector2 input;
+    private Rigidbody rb;
+    private float force = 10f;
+    
+
     // Settings
     [SerializeField] private float motorForce, breakForce, maxSteerAngle;
 
@@ -149,6 +156,8 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
+
+     
     
     private void FixedUpdate() {
         
@@ -160,20 +169,25 @@ public class CarController : MonoBehaviour
             HandleSteering();
             UpdateWheels();
             RotateSteer(steer);
+            
         }
             
     }
 
+    
+   
     public void GetInput() {
         // Steering Input
-        horizontalInput = Input.GetAxis("Horizontal");
+         horizontalInput = Input.GetAxis("Horizontal");
 
         // Acceleration Input
-        verticalInput = Input.GetAxis("Vertical");
+         verticalInput = Input.GetAxis("Vertical");
 
         // Breaking Input
         isBreaking = Input.GetKey(KeyCode.Space);
     }
+
+    
 
     
 
