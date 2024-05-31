@@ -130,6 +130,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit.Inputs;
 
 public class CarController : MonoBehaviour
 {
@@ -155,6 +156,15 @@ public class CarController : MonoBehaviour
     [SerializeField] private Transform frontLeftWheelTransform, frontRightWheelTransform;
     [SerializeField] private Transform rearLeftWheelTransform, rearRightWheelTransform;
 
+    [SerializeField] private InputActionReference joystickInput;
+
+    private void OnEnable() {
+        joystickInput.action.Enable();
+    }
+
+    private void OnDisable() {
+        joystickInput.action.Disable();
+    }
     
     private void FixedUpdate() {
 
@@ -168,11 +178,18 @@ public class CarController : MonoBehaviour
     
    
     public void GetInput() {
+
+        //Vector2 joystickValue = joystickInput.action.ReadValue<Vector2>();
         // Steering Input
          horizontalInput = Input.GetAxis("Horizontal");
 
         // Acceleration Input
          verticalInput = Input.GetAxis("Vertical");
+
+          /*horizontalInput = joystickValue.x;
+
+        // Acceleration Input
+         verticalInput = joystickValue.y;*/
 
         // Breaking Input
         isBreaking = Input.GetKey(KeyCode.Space);

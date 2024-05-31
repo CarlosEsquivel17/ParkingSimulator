@@ -9,12 +9,15 @@ public class AudioManager : MonoBehaviour
 
     public GameObject suelo;
     public GameObject coche;
-    public TextMeshProUGUI uiText;
+    public TextMeshProUGUI collisionCounterText;
+    //public Panel colocar;
     private int contadorColisiones = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(collisionCounterText!=null){
+            collisionCounterText.text = "Colisiones: " + contadorColisiones;
+        }
     }
 
     // Update is called once per frame
@@ -33,7 +36,9 @@ public class AudioManager : MonoBehaviour
             contadorColisiones++;
 
             // Actualiza el texto de la UI para mostrar el nuevo contador
-            uiText.text = "Colisiones: " + contadorColisiones;
+            //uiText.text = "Colisiones: " + contadorColisiones;
+            collisionCounterText.text = "Colisiones: " + contadorColisiones;
+
             Debug.Log("Colisiones: " + contadorColisiones);
         }
     }
