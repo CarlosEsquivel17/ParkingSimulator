@@ -5,47 +5,27 @@ using UnityEngine;
 public class FadeObject : MonoBehaviour
 {
 
-    public GameObject[] objetos; // Asigna los GameObjects aquí
-    private Material[] materiales;
-    private bool esVisible = true;
+    public GameObject objeto; 
+    public GameObject player; 
 
-    // Start is called before the first frame update
+    // Inicialización
     void Start()
     {
-         // Inicializa el array de materiales
-        materiales = new Material[objetos.Length];
-
-        // Obtiene los materiales de los objetos
-        for (int i = 0; i < objetos.Length; i++)
-        {
-            materiales[i] = objetos[i].GetComponent<Renderer>().material;
-        }
+        InvokeRepeating("Toggle", 0, 1);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Toggle()
     {
-        
-        // Cambia el estado de visibilidad de la flecha
-        esVisible = !esVisible;
-        
+        // Cambia el estado de activación del GameObject
+        objeto.SetActive(!objeto.activeSelf);
+    }
 
-        for (int i = 0; i < objetos.Length; i++)
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == player)
         {
-            // Obtiene la transparencia actual
-            float transparenciaActual = materiales[i].color.a;
-
-            // Calcula la transparencia objetivo
-            float transparenciaObjetivo = esVisible ? 1f : 0f;
-
-            // Interpola entre la transparencia actual y la objetivo
-            float transparenciaNueva = Mathf.Lerp(transparenciaActual, transparenciaObjetivo, Time.deltaTime);
-
-            // Aplica la nueva transparencia al material del objeto
-            Color color = materiales[i].color;
-            color.a = transparenciaNueva;
-            materiales[i].color = color;
+            CancelInvoke("Toggle");
+            objeto.SetActive(false);
         }
-    
     }
 }

@@ -137,16 +137,11 @@ public class CarController : MonoBehaviour
     public bool avanzar;
     private float currentSteerAngle, currentbreakForce;
     private bool isBreaking;
-    private bool startOn = false;
-    private bool cercaDelVehiculo = false;
-    public AudioSource startEngine;
     public GameObject steer;
     private PlayerInput playerInput;
-    public TextMeshProUGUI uiText;
     private Vector2 input;
     private Rigidbody rb;
     private float force = 10f;
-    private int contadorColisiones = 0;
     
 
     // Settings
@@ -162,18 +157,12 @@ public class CarController : MonoBehaviour
 
     
     private void FixedUpdate() {
-        
-        StartEngine();
 
-        if (startOn) {
-            GetInput();
-            HandleMotor();
-            HandleSteering();
-            UpdateWheels();
-            RotateSteer(steer);
-            UpdateText("Contador de colisiones:");
-        }
-            
+        GetInput();
+        HandleMotor();
+        HandleSteering();
+        UpdateWheels();
+        RotateSteer(steer); 
     }
 
     
@@ -232,28 +221,5 @@ public class CarController : MonoBehaviour
     private void RotateSteer(GameObject steer){
         float steerAngle = Input.GetAxis("Horizontal") * maxSteerAngle; 
         steer.transform.localEulerAngles = new Vector3(0, 180, steerAngle);
-    }
-
-     private void StartEngine() {
-        
-        if (!startOn && Input.GetKey(KeyCode.E)) {
-            startOn = true;
-            startEngine.Play();
-        }
-    }
-
-    void OnCollisionEnter(Collision collision) {
-        // Incrementa el contador de colisiones
-        uiText.SetText("Colisiones: " + contadorColisiones);
-        Debug.Log("Colisiones: " + contadorColisiones);
-        contadorColisiones++;
-    }
-
-    public void UpdateText(string newText) {
-        if (uiText != null) {
-            uiText.SetText(newText);
-        } else {
-            Debug.LogError("El componente de texto no está asignado.");
-        }
     }
 }

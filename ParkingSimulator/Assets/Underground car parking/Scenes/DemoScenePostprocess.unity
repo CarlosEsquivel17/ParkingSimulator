@@ -7789,19 +7789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ea2dc026f529fd4ba7f25c7b8e9408d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetos:
-  - {fileID: 1164423621}
-  - {fileID: 898496715}
-  - {fileID: 297858492}
-  - {fileID: 464593916}
-  - {fileID: 932068818}
-  - {fileID: 1499496538}
-  - {fileID: 889923451}
-  - {fileID: 330072586}
-  - {fileID: 418507054}
-  - {fileID: 202379280}
-  - {fileID: 1024579096}
-  - {fileID: 1567096587}
+  objeto: {fileID: 331558731}
+  player: {fileID: 831596052}
 --- !u!4 &331558733
 Transform:
   m_ObjectHideFlags: 0
@@ -14054,7 +14043,7 @@ RectTransform:
   m_Children:
   - {fileID: 2056494329}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -20003,9 +19992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avanzar: 0
-  startEngine: {fileID: 879032288}
   steer: {fileID: 1420820937}
-  uiText: {fileID: 1811797900}
   motorForce: 1000
   breakForce: 3000
   maxSteerAngle: 30
@@ -20092,6 +20079,21 @@ MonoBehaviour:
   m_DefaultActionMap: Carro
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &831596057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831596052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ec8aa008f72fec4cb6f16b12ea3b4e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  suelo: {fileID: 1929954136}
+  coche: {fileID: 831596052}
+  uiText: {fileID: 1811797900}
 --- !u!1001 &835336758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30472,7 +30474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1230954290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -33764,9 +33766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avanzar: 0
-  startEngine: {fileID: 0}
   steer: {fileID: 1420820937}
-  uiText: {fileID: 0}
   motorForce: 1000
   breakForce: 3000
   maxSteerAngle: 30
@@ -35202,7 +35202,7 @@ RectTransform:
   m_GameObject: {fileID: 1400035717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1811797899}
   - {fileID: 1230954290}
@@ -35211,9 +35211,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 730, y: 138}
-  m_SizeDelta: {x: 1460, y: 276}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &1400035719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35253,7 +35253,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &1400035721
 Canvas:
   m_ObjectHideFlags: 0
@@ -35263,7 +35263,7 @@ Canvas:
   m_GameObject: {fileID: 1400035717}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_Camera: {fileID: 1885388971}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -44324,7 +44324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 430.21765, y: -75.186386}
+  m_AnchoredPosition: {x: 689, y: -301}
   m_SizeDelta: {x: 610.3, y: 91.032}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1811797900
@@ -44347,7 +44347,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 'Colisiones:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -44374,8 +44374,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26
-  m_fontSizeBase: 26
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -44410,7 +44410,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -771.553, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -50602,7 +50602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2033134414
 PrefabInstance:
@@ -52796,7 +52796,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2128759594
 Transform:
   m_ObjectHideFlags: 0
