@@ -15,6 +15,7 @@ EditorBuildSettings:
     path: Assets/CartoonTracksPack1/Track1/Demo Scenes/Tutorial.unity
     guid: 7b251b9f92cd9d04ebf9b79a178778ee
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 380e99b0048b3fb40b52ede12832c61f, type: 2}
     com.unity.input.settings: {fileID: 11400000, guid: ec9b3376b549fd84d88e1729daea35cd, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: cb51b0ee19bbccc4ca93faa79805a3a1, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 4a65d712d4179d44eb98246b519cb0bd, type: 2}

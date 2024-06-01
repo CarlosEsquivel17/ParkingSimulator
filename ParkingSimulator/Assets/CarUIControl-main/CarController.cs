@@ -179,17 +179,18 @@ public class CarController : MonoBehaviour
    
     public void GetInput() {
 
-        //Vector2 joystickValue = joystickInput.action.ReadValue<Vector2>();
+        Vector2 joystickValue = joystickInput.action.ReadValue<Vector2>();
         // Steering Input
-         horizontalInput = Input.GetAxis("Horizontal");
+         //horizontalInput = Input.GetAxis("Horizontal");
 
         // Acceleration Input
-         verticalInput = Input.GetAxis("Vertical");
+        // verticalInput = Input.GetAxis("Vertical");
 
-          /*horizontalInput = joystickValue.x;
+          horizontalInput = joystickValue.x;
 
         // Acceleration Input
-         verticalInput = joystickValue.y;*/
+         verticalInput = joystickValue.y;
+        Debug.Log(horizontalInput);
 
         // Breaking Input
         isBreaking = Input.GetKey(KeyCode.Space);
